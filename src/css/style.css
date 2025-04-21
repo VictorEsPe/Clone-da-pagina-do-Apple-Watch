@@ -4,22 +4,72 @@
   src: url('https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff');
 }
 
-:root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 body {
   height: 100dvh;
+  background-color: #6e6e73;
 }
 
-nav {
-  width: 61.25rem;
-  & > ul {
+.navbar {
+  background-color: yellow;
+  /* width: 100dvw; */
+  /* display: flex;
+  justify-content: center; */
+}
+
+.navbar-content {
+  /* width: 61.25rem; */
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  gap: 16px;
+  background-color: #0066cc;
+
+  & #burger-menu-checkbox,
+  label {
+    display: none;
+  }
+
+  & .menu {
+    height: 15px;
+  }
+
+  & .burger {
+    background-color: #000;
+    width: 20px;
+    height: 2px;
+    display: block;
+    position: relative;
+    transition: 0.5s all ease-in-out;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: #000;
+      position: absolute;
+      bottom: -8px;
+      transition: 0.3s all ease-in-out;
+    }
+  }
+
+  & #burger-menu-checkbox:checked ~ label .burger {
+    transform: rotate(45deg);
+    top: 5px;
+  }
+
+  & #burger-menu-checkbox:checked ~ label .burger::before {
+    transform: rotate(90deg);
+    top: 0;
+  }
+
+  & > .nav-items {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     cursor: pointer;
     font-size: small;
@@ -28,11 +78,14 @@ nav {
 
 main {
   margin: 3.125rem auto;
-  width: 61.25rem;
+  max-width: 61.25rem;
+  background-color: beige;
 }
 
 #produto {
   display: flex;
+  align-items: center;
+
   & > #opcoes-produto {
     flex-grow: 0;
     flex-basis: 33.33333%;
@@ -237,6 +290,11 @@ main {
 
 #visualizacao {
   margin: 0 0 0 5rem;
+  
+  & img {
+    max-width: 100%;
+    
+  }
 }
 
 #selecionar-imagem {
